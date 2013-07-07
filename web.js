@@ -3,6 +3,7 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
+  response.setHeader('Content-Type', 'text/html');
   response.send(fs.readFileSync('index.html'));
 });
 
